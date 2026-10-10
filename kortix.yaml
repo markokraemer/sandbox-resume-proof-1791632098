@@ -6,3 +6,7 @@ sandbox:
     sudo mkdir -p /mnt/resume-proof
     n=$(cat /mnt/resume-proof/boots 2>/dev/null || echo 0)
     echo $((n + 1)) | sudo tee /mnt/resume-proof/boots >/dev/null
+default_agent: proof
+agents:
+  proof:
+    file: agents/proof.md
