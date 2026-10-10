@@ -1,0 +1,8 @@
+kortix_version: 2
+project:
+  name: Sandbox Resume Proof
+sandbox:
+  on_boot: |
+    sudo mkdir -p /mnt/resume-proof
+    n=$(cat /mnt/resume-proof/boots 2>/dev/null || echo 0)
+    echo $((n + 1)) | sudo tee /mnt/resume-proof/boots >/dev/null
